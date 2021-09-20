@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @org.springframework.stereotype.Service
-public class Service implements IEmployeePayrollService{
+public class EmployeePayrollService implements IEmployeePayrollService{
 
     private List<EmployeePayrollData> employeePayrollList=new ArrayList<>();
 
@@ -29,12 +29,12 @@ public class Service implements IEmployeePayrollService{
 
     @Override
     public EmployeePayrollData getEmployeePayrollData(int empId) {
-//
         return employeePayrollList.get(empId-1);
     }
 
     @Override
     public EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+
         EmployeePayrollData employeePayrollData=null;
         employeePayrollData=new EmployeePayrollData(employeePayrollList.size()+1,employeePayrollDTO);
         employeePayrollList.add(employeePayrollData);
